@@ -101,7 +101,7 @@ form{
   gap: 1rem;
 }
 
-form input{
+form > input{
   border: solid 2px #20171f;
   background: #ffffffc9;
   width: 80%;
@@ -110,7 +110,7 @@ form input{
   transition: all 0.8s;
 }
 
-form input:focus,
+form > input:focus,
 input[type="submit"]:hover{
   background: #20171f;
   border-color:#ffffffc9;
@@ -121,24 +121,24 @@ input[type="submit"]:hover{
 
 
 
-input::placeholder{
+form > input::placeholder{
   text-align: center;
   font-size: 1rem;
 }
 
-input[type="submit"]{
+form > input[type="submit"]{
   text-align: center;
   font-size: clamp(1.1rem, 0.964rem + 0.364vw, 1.4rem);
   background: #cec4c4;
 }
 
-input[type="submit"]:focus,
-input[type="submit"]:hover{
+form > input[type="submit"]:focus,
+form > input[type="submit"]:hover{
   transform: none;
   border-radius: 10px;
 }
 
-form p{
+form > p{
   display: flex;
   width: 100%;
   font-size: clamp(1rem, 0.773rem + 0.606vw, 1.5rem);
@@ -147,8 +147,8 @@ form p{
   text-align: center;
 }
 
-form p::after,
-form p::before{
+form > p::after,
+form > p::before{
   content: "";
   background: #4e3e4c;
   margin: auto 3px;
@@ -161,6 +161,49 @@ form p::before{
   justify-content: space-around;
   width: 100%;
 }
+
+.assertion{
+  display: block;
+  width: 80%;
+}
+
+.assertion > p{
+  font-size: clamp(0.6rem, 0.314rem + 0.762vw, 1rem);
+  padding-left: 25px;
+}
+.check-box{
+  width: 1px;
+  height: 1px;
+  padding-left: 22px;
+    overflow: hidden;
+    position: absolute;
+    appearance: none;
+}
+
+.c-style{
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: solid 2px #20171f;
+  transition: all 0.5s;
+}
+
+.check-box:checked + .c-style::before{
+  content: "";
+  width: 9px;
+  height: 9px;
+  background: #4e3e4c;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.check-box:hover + .c-style{
+  box-shadow: 0 0 0 1px #000;
+
+}
+
 
 .signup{
   display: none;
